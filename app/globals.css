@@ -1,5 +1,11 @@
+/* Hallmark · redesign: Carnival signature moves (Big Shoulders display, hard-offset
+ * shadow, ◆ ornaments, marquee) grafted onto the site's own dark palette + green
+ * accent — no new hues, no Carnival duo-tone paper. Countdown preserved. */
 :root {
   --color-accent: #2cdb8c;
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-carnival-display), "Big Shoulders", "Cormorant Garamond", serif;
+  --font-mono: var(--font-carnival-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 a:focus-visible,
@@ -12,6 +18,12 @@ button:focus-visible {
    Built on the same tokens (--color-*, --font-*) so they stay in sync
    with the rest of the darkroom-ui theme. */
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
 .topbar {
   display: flex;
   flex-wrap: wrap;
@@ -19,14 +31,48 @@ button:focus-visible {
   justify-content: space-between;
   gap: 6px 16px;
   padding: 14px 28px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .topbar .date {
-  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-family: var(--font-mono);
   letter-spacing: 0.1em;
   font-size: 11px;
   color: var(--color-text-muted);
+}
+
+.marquee {
+  overflow: hidden;
+  background: var(--color-paper-dark);
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 0;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 22s linear infinite;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+.marquee-track span {
+  padding-right: 24px;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee-track span:last-child {
+    display: none;
+  }
 }
 
 .fact-row {
@@ -49,8 +95,17 @@ button:focus-visible {
 }
 .fact-row .value-lead {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 26px;
   line-height: 1.1;
+}
+
+.map-link {
+  transition: color 200ms;
+}
+.map-link:hover {
+  color: var(--color-accent);
 }
 
 .cta-row {
@@ -65,31 +120,47 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 4px;
-  padding: 12px 24px;
-  border: 1px solid transparent;
-  transition: background-color 200ms, color 200ms, border-color 200ms;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  padding: 14px 26px;
+  border: 2px solid transparent;
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
 }
 
 .accent-btn {
   background: var(--color-accent);
   color: var(--color-paper);
-  border-color: var(--color-accent);
+  border-color: var(--color-foreground);
+  box-shadow: 4px 4px 0 var(--color-foreground);
 }
 .accent-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-foreground);
+}
+.accent-btn:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--color-foreground);
+}
+
+.btn-outline {
   background: transparent;
   color: var(--color-accent);
   border-color: var(--color-accent);
 }
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
 
 .section-hairline-top {
-  border-top: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-border);
 }
 .section-hairline-bottom {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
 }
 
 .accent-badge {
@@ -97,22 +168,42 @@ button:focus-visible {
   border-color: var(--color-accent);
 }
 
-.link-muted {
-  display: inline-block;
+.countdown-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 20px;
   margin-top: 20px;
-  font-size: 13px;
-  color: var(--color-text-muted);
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 2px;
-  transition: color 200ms, border-color 200ms;
-}
-.link-muted:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+  padding: 14px 18px;
+  border: 2px solid var(--color-foreground);
+  box-shadow: 4px 4px 0 var(--color-accent);
+  background: var(--color-paper-dark);
 }
 
-.tag {
-  font-size: 12px;
+.countdown {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.countdown-unit {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-mono);
+}
+
+.countdown-unit .num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-unit .unit-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--color-text-muted);
 }
 
@@ -123,13 +214,15 @@ button:focus-visible {
   justify-content: space-between;
   gap: 8px 32px;
   padding: 22px 0 18px;
-  border-top: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-border);
 }
 .program-row:last-child {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
 }
 .program-row .name {
   font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
   font-size: 24px;
   flex: 0 0 auto;
   min-width: 150px;
@@ -151,10 +244,13 @@ button:focus-visible {
   border-radius: 4px;
   object-fit: cover;
   flex: none;
+  border: 2px solid var(--color-foreground);
 }
 .host-row span {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 20px;
 }
 
 .reading-row {
@@ -174,14 +270,16 @@ button:focus-visible {
   color: var(--color-accent);
 }
 .reading-row .num {
-  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-family: var(--font-mono);
   font-size: 12px;
   color: var(--color-text-muted);
   flex: none;
 }
 .reading-row .title {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 20px;
   flex: 1 1 12em;
   min-width: 0;
 }
@@ -194,16 +292,61 @@ button:focus-visible {
 
 .display-lead {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
   margin: 0;
 }
 
 .closing-row {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 32px;
   flex-wrap: wrap;
+}
+
+.cta-band {
+  background: var(--color-accent);
+  border-top: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--color-border);
+  padding: 64px 28px 72px;
+}
+.cta-band-inner {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+.cta-headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  font-size: clamp(52px, 13vw, 12rem);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35em;
+}
+.cta-sub {
+  color: var(--color-paper);
+  font-size: clamp(19px, 2.6vw, 30px);
+  max-width: 22em;
+  margin: 0 0 40px auto;
+  text-align: right;
+}
+.invert-btn {
+  background: var(--color-paper);
+  color: var(--color-text);
+  border-color: var(--color-paper);
+  box-shadow: 4px 4px 0 var(--color-paper);
+}
+.invert-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-paper);
+}
+.invert-btn:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 var(--color-paper);
 }
 
 .footer-row {
