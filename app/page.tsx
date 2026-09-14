@@ -28,7 +28,7 @@ const PROGRAM = [
 
 const HOSTS = [
   { name: "Lara Díaz", hash: "80eb12b7b89cc1e893a7e2ca291afd14" },
-  { name: "Leo Apiwan", hash: "23fcd8c98117081a3e6610e4caae7a67" },
+  { name: "Leonardo Apiwan", hash: "23fcd8c98117081a3e6610e4caae7a67" },
   { name: "Santiago Persico", hash: "0eea5a8e361b0452cc298a11734250ff" },
   {
     name: "Federico Polesel",
@@ -170,7 +170,7 @@ export default function HomePage() {
               Quién lo organiza
             </Heading>
             <Text size="body" style={{ marginBottom: 14 }}>
-              Lara Díaz, Leo Apiwan, Santiago Persico y Federico Polesel,
+              Lara Díaz, Leonardo Apiwan, Santiago Persico y Federico Polesel,
               desarrolladores y organizadores de comunidad radicados en Madrid.
             </Text>
             <Text size="body">
