@@ -105,6 +105,8 @@ export default function HomePage() {
         alt="Hacktoberfest Madrid 2026 — Open Source AI Hack Day"
         width={3840}
         height={1600}
+        sizes="100vw"
+        quality={90}
         priority
         style={{ width: "100%", height: "auto", display: "block" }}
       />
