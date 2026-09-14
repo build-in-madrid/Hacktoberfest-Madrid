@@ -8,15 +8,6 @@ Landing page del **Hacktoberfest Hack Day Madrid 2026**, un evento presencial y 
 
 No hace falta venir con equipo ni con una idea cerrada. La idea es conocer gente, experimentar, aprender y construir algo juntos.
 
-## Detalles
-
-- **Fecha:** sábado 10 de octubre de 2026
-- **Horario:** 15:00–20:00
-- **Lugar:** Centro de Negocios Melior
-- **Dirección:** Diego de León 47, Madrid
-- **Entrada:** gratuita, con plazas limitadas
-- **Qué llevar:** portátil y cargador
-
 ## Programa
 
 - **Equipos:** presentación de asistentes, intereses y formación de grupos.
