@@ -4,7 +4,7 @@ Landing page del **Hacktoberfest Hack Day Madrid 2026**, un evento presencial y 
 
 ## Sobre el evento
 
-**Hacktoberfest Hack Day Madrid** es una tarde de trabajo práctico donde los asistentes forman equipos, exploran herramientas y modelos abiertos, desarrollan un proyecto y lo presentan en una ronda final de demos.
+**Hacktoberfest Hack Day Madrid** es una tarde de trabajo práctico donde los participantes se organizarán en equipos, probarán herramientas y modelos abiertos, desarrollarán una idea y la presentarán al final en una ronda de demos.
 
 No hace falta venir con equipo ni con una idea cerrada. La idea es conocer gente, experimentar, aprender y construir algo juntos.
 
