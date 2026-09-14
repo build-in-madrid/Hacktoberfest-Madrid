@@ -12,11 +12,7 @@ const MAPS_URL =
 const PROGRAM = [
   {
     name: "Equipos",
-    desc: "Presentación de los participantes, intereses de cada uno y formación de equipos para trabajar durante la tarde.",
-  },
-  {
-    name: "Herramientas",
-    desc: "Exploración de modelos abiertos, frameworks de agentes y las herramientas que cada equipo quiera usar.",
+    desc: "Presentación de la consigna, de los participantes y sus intereses, y formación de equipos para trabajar durante la tarde.",
   },
   {
     name: "Construcción",
