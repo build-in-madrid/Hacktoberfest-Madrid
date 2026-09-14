@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { Page, Section, ContentGrid, Heading, Text, Label, Badge } from "darkroom-ui";
 
-const REGISTER_URL =
-  "https://events.mlh.com/events/14972-hacktoberfest-hack-day-madrid/register";
+const REGISTER_URL = "https://events.mlh.com/events/14972-hacktoberfest-hack-day-madrid";
 const CALENDAR_URL =
   "https://www.google.com/calendar/render?action=TEMPLATE&dates=20261010T140000Z%2F20261010T190000Z&details=See+event%3A+https%3A%2F%2Fevents.mlh.com%2Fevents%2F14972-hacktoberfest-hack-day-madrid&text=Hacktoberfest+Hack+Day+Madrid";
 
