@@ -147,6 +147,10 @@ export default function HomePage() {
             </Text>
           </div>
         ))}
+        <Text size="caption" style={{ marginTop: 18 }}>
+          El horario detallado de cada bloque se confirmará más cerca de la
+          fecha.
+        </Text>
       </Section>
 
       <Section spacing="md" containerSize="lg">
