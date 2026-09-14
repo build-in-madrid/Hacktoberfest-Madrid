@@ -136,7 +136,7 @@ export default function HomePage() {
 
       <Section spacing="md" containerSize="lg">
         <div style={{ display: "flex", alignItems: "baseline", gap: 20, marginBottom: 8 }}>
-          <Heading level={3}>La tarde, más o menos</Heading>
+          <Heading level={3}>Agenda de la tarde</Heading>
           <span className="tag">Programa</span>
         </div>
         {PROGRAM.map((item) => (
@@ -188,7 +188,7 @@ export default function HomePage() {
 
       <Section spacing="md" containerSize="lg" className="section-hairline-top">
         <div style={{ display: "flex", alignItems: "baseline", gap: 20, marginBottom: 28 }}>
-          <Heading level={3}>Para leer antes</Heading>
+          <Heading level={3}>Lecturas recomendadas</Heading>
           <span className="tag">Material de referencia</span>
         </div>
         {READING_LIST.map((item, i) => (
