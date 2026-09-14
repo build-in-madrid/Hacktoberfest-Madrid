@@ -1,0 +1,225 @@
+:root {
+  --color-accent: #6aab7a;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-foreground);
+  outline-offset: 2px;
+}
+
+/* Bespoke rows/labels the component library has no primitive for.
+   Built on the same tokens (--color-*, --font-*) so they stay in sync
+   with the rest of the darkroom-ui theme. */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 16px;
+  padding: 14px 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar .date {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.fact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 20px;
+  padding: 14px 0 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+.fact-row:first-child {
+  padding-top: 0;
+}
+.fact-row .value {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: right;
+  color: var(--color-foreground);
+}
+.fact-row .value-lead {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  transition: background-color 200ms, color 200ms, border-color 200ms;
+}
+
+.accent-btn {
+  background: var(--color-accent);
+  color: var(--color-paper);
+  border-color: var(--color-accent);
+}
+.accent-btn:hover {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.section-hairline-top {
+  border-top: 1px solid var(--color-border);
+}
+.section-hairline-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accent-badge {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.link-muted {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+  transition: color 200ms, border-color 200ms;
+}
+.link-muted:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.tag {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.program-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 32px;
+  padding: 22px 0 18px;
+  border-top: 1px solid var(--color-border);
+}
+.program-row:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+.program-row .name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  flex: 0 0 auto;
+  min-width: 150px;
+}
+.program-row .desc {
+  max-width: 34em;
+  flex: 1 1 17em;
+  min-width: 0;
+}
+
+.host-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.host-row img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex: none;
+}
+.host-row span {
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.reading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--color-border);
+  transition: color 200ms;
+  color: var(--color-foreground);
+}
+.reading-row:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+.reading-row:hover {
+  color: var(--color-accent);
+}
+.reading-row .num {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  flex: none;
+}
+.reading-row .title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  flex: 1 1 12em;
+  min-width: 0;
+}
+.reading-row .summary {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  flex: 1 1 16em;
+  min-width: 0;
+}
+
+.display-lead {
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin: 0;
+}
+
+.closing-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 20px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-links a:hover {
+  color: var(--color-accent);
+}
