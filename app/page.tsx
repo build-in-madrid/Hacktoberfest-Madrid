@@ -100,16 +100,16 @@ export default function HomePage() {
         <span className="date">10.10.2026</span>
       </header>
 
-      <Image
-        src="/banner.png"
-        alt="Hacktoberfest Madrid 2026 — Open Source AI Hack Day"
-        width={3840}
-        height={1600}
-        sizes="100vw"
-        quality={90}
-        priority
-        style={{ width: "100%", height: "auto", display: "block" }}
-      />
+      <div className="hero">
+        <Image
+          src="/banner.jpg"
+          alt="Hacktoberfest Madrid 2026 — Open Source AI Hack Day"
+          width={3840}
+          height={1600}
+          unoptimized
+          priority
+        />
+      </div>
 
       <Section spacing="lg" containerSize="lg" className="section-hairline-bottom">
         <ContentGrid columns={2}>

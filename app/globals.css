@@ -41,6 +41,15 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-muted);
 }
 
+.hero {
+  padding: 0 28px;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .marquee {
   overflow: hidden;
   background: var(--color-paper-dark);
