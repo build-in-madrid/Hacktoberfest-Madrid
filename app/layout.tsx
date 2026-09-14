@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Hacktoberfest Hack Day Madrid 2026",
     description:
       "Un Hack Day presencial y gratuito dedicado al open source y a la inteligencia artificial abierta, en Madrid.",
-    images: ["/banner.jpg"],
+    images: ["/banner.png"],
   },
 };
 

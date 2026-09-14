@@ -101,10 +101,10 @@ export default function HomePage() {
       </header>
 
       <Image
-        src="/banner.jpg"
+        src="/banner.png"
         alt="Hacktoberfest Madrid 2026 — Open Source AI Hack Day"
-        width={1024}
-        height={426}
+        width={3840}
+        height={1600}
         priority
         style={{ width: "100%", height: "auto", display: "block" }}
       />
