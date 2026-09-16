@@ -1,0 +1,579 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { copy } from "../copy";
+
+const REGISTER_URL =
+  "https://events.mlh.com/events/14972-hacktoberfest-hack-day-madrid";
+const EVENT_DATE = "2026-10-10T15:00:00+02:00";
+const MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Centro+de+Negocios+Melior%2C+Diego+de+Le%C3%B3n+47%2C+Madrid";
+
+const HOSTS = [
+  { name: "Lara Díaz", hash: "80eb12b7b89cc1e893a7e2ca291afd14" },
+  { name: "Leonardo Apiwan", hash: "23fcd8c98117081a3e6610e4caae7a67" },
+  { name: "Santiago Persico", hash: "0eea5a8e361b0452cc298a11734250ff" },
+  {
+    name: "Federico Polesel",
+    hash: "3a7c2221033d1406bc0e0cb7b3de3f3ea8d34c587f6548a3b6ace420a11c35dc",
+  },
+];
+
+const READING_LIST = [
+  {
+    href: "https://dev.to/loc_carrre_0d798813c662/agent-skills-explained-what-they-are-what-they-arent-and-how-to-use-them-bf9",
+    title: "Agent Skills Explained",
+  },
+  {
+    href: "https://dev.to/sbt112321321/beyond-the-black-box-a-developers-guide-to-open-weight-llm-api-integration-1ea6",
+    title: "Integrar APIs de LLMs abiertos",
+  },
+  {
+    href: "https://dev.to/purpledoubled/how-to-run-googles-gemma-4-locally-with-ollama-all-4-model-sizes-compared-2pbh",
+    title: "Gemma 4 en local con Ollama",
+  },
+  {
+    href: "https://dev.to/truongpx396/hermes-agent-the-self-improving-agent-framework-and-how-it-compares-to-openclaw-goclaw-22mc",
+    title: "Hermes Agent: guía práctica",
+  },
+];
+
+const t = copy.es;
+---
+
+<Layout>
+  <div class="page">
+    <header class="topbar">
+      <span class="label">Hacktoberfest · Hack Day · Madrid</span>
+      <div class="topbar-end">
+        <span class="date">10.10.2026</span>
+        <div
+          class="lang-toggle"
+          role="group"
+          aria-label={t.langGroup}
+          data-label-es={copy.es.langGroup}
+          data-label-en={copy.en.langGroup}
+        >
+          <button type="button" aria-pressed="false" data-lang="en">
+            EN
+          </button>
+          <button type="button" aria-pressed="true" data-lang="es">
+            ES
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <img
+        src="/banner.jpg"
+        width="3840"
+        height="1600"
+        alt="Hacktoberfest Madrid 2026 — Open Source AI Hack Day"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+
+    <section class="section section-lg section-hairline-bottom">
+      <div class="container">
+        <div class="content-grid">
+          <div>
+            <p
+              class="display-lead"
+              style="font-size: clamp(30px,3.6vw,44px); line-height: 1.2; margin-bottom: 24px"
+              data-i18n-es={copy.es.lead}
+              data-i18n-en={copy.en.lead}
+            >
+              {t.lead}
+            </p>
+            <p
+              class="text-body"
+              style="margin-bottom: 16px"
+              data-i18n-es={copy.es.intro1}
+              data-i18n-en={copy.en.intro1}
+            >
+              {t.intro1}
+            </p>
+            <p
+              class="text-body"
+              data-i18n-es={copy.es.intro2}
+              data-i18n-en={copy.en.intro2}
+            >
+              {t.intro2}
+            </p>
+          </div>
+
+          <div>
+            <div class="fact-row">
+              <span
+                class="label"
+                data-i18n-es={copy.es.saturday}
+                data-i18n-en={copy.en.saturday}
+              >
+                {t.saturday}
+              </span>
+              <span
+                class="value value-lead"
+                data-i18n-es={copy.es.saturdayValue}
+                data-i18n-en={copy.en.saturdayValue}
+              >
+                {t.saturdayValue}
+              </span>
+            </div>
+            <div class="fact-row">
+              <span
+                class="label"
+                data-i18n-es={copy.es.place}
+                data-i18n-en={copy.en.place}
+              >
+                {t.place}
+              </span>
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener"
+                class="value map-link"
+              >
+                Centro de Negocios Melior
+                <br />
+                <span class="text-caption">Diego de León 47, Madrid</span>
+              </a>
+            </div>
+            <div class="fact-row">
+              <span
+                class="label"
+                data-i18n-es={copy.es.bring}
+                data-i18n-en={copy.en.bring}
+              >
+                {t.bring}
+              </span>
+              <span
+                class="value"
+                data-i18n-es={copy.es.bringValue}
+                data-i18n-en={copy.en.bringValue}
+              >
+                {t.bringValue}
+              </span>
+            </div>
+
+            <div class="cta-row">
+              <a
+                href={REGISTER_URL}
+                target="_blank"
+                rel="noopener"
+                class="btn-primary accent-btn"
+                data-i18n-es={copy.es.register}
+                data-i18n-en={copy.en.register}
+              >
+                {t.register}
+              </a>
+              <span
+                class="badge-stamp accent-badge"
+                data-i18n-es={copy.es.badge}
+                data-i18n-en={copy.en.badge}
+              >
+                {t.badge}
+              </span>
+            </div>
+            <div class="countdown-row">
+              <span
+                class="label"
+                data-i18n-es={copy.es.startsIn}
+                data-i18n-en={copy.en.startsIn}
+              >
+                {t.startsIn}
+              </span>
+              <div class="countdown" data-event-date={EVENT_DATE}>
+                {(["days", "hours", "minutes", "seconds"] as const).map(
+                  (unit) => (
+                    <span class="countdown-unit">
+                      <span class="num" data-countdown-unit={unit}>
+                        --
+                      </span>
+                      <span
+                        class="unit-label"
+                        data-i18n-es={copy.es.countdown[unit]}
+                        data-i18n-en={copy.en.countdown[unit]}
+                      >
+                        {t.countdown[unit]}
+                      </span>
+                    </span>
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-md">
+      <div class="container">
+        <h3
+          class="section-heading"
+          style="margin-bottom: 8px"
+          data-i18n-es={copy.es.agenda}
+          data-i18n-en={copy.en.agenda}
+        >
+          {t.agenda}
+        </h3>
+        {t.program.map((item, i) => (
+          <div class="program-row">
+            <span
+              class="name"
+              data-i18n-es={copy.es.program[i].name}
+              data-i18n-en={copy.en.program[i].name}
+            >
+              {item.name}
+            </span>
+            <span
+              class="text-body desc"
+              data-i18n-es={copy.es.program[i].desc}
+              data-i18n-en={copy.en.program[i].desc}
+            >
+              {item.desc}
+            </span>
+          </div>
+        ))}
+        <p
+          class="text-caption"
+          style="margin-top: 18px"
+          data-i18n-es={copy.es.agendaNote}
+          data-i18n-en={copy.en.agendaNote}
+        >
+          {t.agendaNote}
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-md">
+      <div class="container">
+        <p
+          class="display-lead"
+          style="font-size: clamp(28px,3.4vw,42px); line-height: 1.25; max-width: 26em"
+          data-i18n-es={copy.es.openBlurb}
+          data-i18n-en={copy.en.openBlurb}
+        >
+          {t.openBlurb}
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-md section-hairline-top">
+      <div class="container">
+        <h3
+          class="section-heading"
+          style="margin-bottom: 14px"
+          data-i18n-es={copy.es.whatIs}
+          data-i18n-en={copy.en.whatIs}
+        >
+          {t.whatIs}
+        </h3>
+        <p
+          class="text-body"
+          style="margin-bottom: 20px; max-width: 42em"
+          data-i18n-es={copy.es.whatIsBody}
+          data-i18n-en={copy.en.whatIsBody}
+        >
+          {t.whatIsBody}
+        </p>
+        <a
+          href="https://hacktoberfest.com/questions/"
+          target="_blank"
+          rel="noopener"
+          class="btn-primary btn-outline"
+          data-i18n-es={copy.es.faq}
+          data-i18n-en={copy.en.faq}
+        >
+          {t.faq}
+        </a>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span
+          data-i18n-es={copy.es.marquee.repeat(4)}
+          data-i18n-en={copy.en.marquee.repeat(4)}
+        >
+          {t.marquee.repeat(4)}
+        </span>
+        <span
+          data-i18n-es={copy.es.marquee.repeat(4)}
+          data-i18n-en={copy.en.marquee.repeat(4)}
+        >
+          {t.marquee.repeat(4)}
+        </span>
+      </div>
+    </div>
+
+    <section class="section section-md">
+      <div class="container">
+        <div class="content-grid">
+          <div style="max-width: 26em">
+            <h3
+              class="section-heading"
+              style="margin-bottom: 20px"
+              data-i18n-es={copy.es.who}
+              data-i18n-en={copy.en.who}
+            >
+              {t.who}
+            </h3>
+            <p
+              class="text-body"
+              style="margin-bottom: 14px"
+              data-i18n-es={copy.es.who1}
+              data-i18n-en={copy.en.who1}
+            >
+              {t.who1}
+            </p>
+            <p
+              class="text-body"
+              data-i18n-es={copy.es.who2}
+              data-i18n-en={copy.en.who2}
+            >
+              {t.who2}
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 18px">
+            {HOSTS.map((host) => (
+              <div class="host-row">
+                <img
+                  src={`https://gravatar.com/avatar/${host.hash}?d=retro&s=200`}
+                  alt={host.name}
+                />
+                <span>{host.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-md section-hairline-top">
+      <div class="container">
+        <h3
+          class="section-heading"
+          style="margin-bottom: 28px"
+          data-i18n-es={copy.es.readings}
+          data-i18n-en={copy.en.readings}
+        >
+          {t.readings}
+        </h3>
+        <p
+          class="text-body"
+          style="margin-bottom: 14px; max-width: 42em"
+          data-i18n-es={copy.es.readings1}
+          data-i18n-en={copy.en.readings1}
+        >
+          {t.readings1}
+        </p>
+        <p
+          class="text-body"
+          style="margin-bottom: 28px; max-width: 42em"
+          data-i18n-es={copy.es.readings2}
+          data-i18n-en={copy.en.readings2}
+        >
+          {t.readings2}
+        </p>
+        {READING_LIST.map((item, i) => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener"
+            class="reading-row"
+          >
+            <span class="num">{String(i + 1).padStart(2, "0")}</span>
+            <span class="title">{item.title}</span>
+            <span
+              class="summary"
+              data-i18n-es={copy.es.readingSummaries[i]}
+              data-i18n-en={copy.en.readingSummaries[i]}
+            >
+              {t.readingSummaries[i]}
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="section section-md section-hairline-top">
+      <div class="container">
+        <h3
+          class="section-heading"
+          style="margin-bottom: 14px"
+          data-i18n-es={copy.es.sponsor}
+          data-i18n-en={copy.en.sponsor}
+        >
+          {t.sponsor}
+        </h3>
+        <p
+          class="text-body"
+          style="margin-bottom: 20px; max-width: 42em"
+          data-i18n-es={copy.es.sponsorBody}
+          data-i18n-en={copy.en.sponsorBody}
+        >
+          {t.sponsorBody}
+        </p>
+        <a
+          href="mailto:hello@laradiaz.dev?subject=Sponsor%20Hacktoberfest%20Madrid%202026"
+          class="btn-primary btn-outline"
+          data-i18n-es={copy.es.writeUs}
+          data-i18n-en={copy.en.writeUs}
+        >
+          {t.writeUs}
+        </a>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <div class="cta-band-inner">
+        <p
+          class="cta-headline"
+          data-i18n-es={copy.es.ctaHeadline}
+          data-i18n-en={copy.en.ctaHeadline}
+        >
+          {t.ctaHeadline}
+        </p>
+        <p
+          class="cta-sub"
+          data-i18n-es={copy.es.ctaSub}
+          data-i18n-en={copy.en.ctaSub}
+        >
+          {t.ctaSub}
+        </p>
+        <div class="closing-row">
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noopener"
+            class="btn-primary invert-btn"
+            data-i18n-es={copy.es.registerFree}
+            data-i18n-en={copy.en.registerFree}
+          >
+            {t.registerFree}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="section-hairline-top">
+      <div
+        class="footer-row"
+        style="max-width: 1152px; margin: 0 auto; padding: 20px 28px 48px"
+      >
+        <span data-i18n-es={copy.es.footer} data-i18n-en={copy.en.footer}>
+          {t.footer}
+        </span>
+        <span class="footer-links">
+          <a
+            href="https://www.mlh.com/community-values"
+            target="_blank"
+            rel="noopener"
+          >
+            Community values
+          </a>
+          <a
+            href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+            target="_blank"
+            rel="noopener"
+            data-i18n-es={copy.es.conduct}
+            data-i18n-en={copy.en.conduct}
+          >
+            {t.conduct}
+          </a>
+          <a
+            href="https://events.mlh.com/events/14972-hacktoberfest-hack-day-madrid"
+            target="_blank"
+            rel="noopener"
+            data-i18n-es={copy.es.mlhEvent}
+            data-i18n-en={copy.en.mlhEvent}
+          >
+            {t.mlhEvent}
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  import type { Lang } from "../copy";
+
+  const languageKey = "hacktoberfest-lang";
+  const translatedLeaves =
+    document.querySelectorAll<HTMLElement>("[data-i18n-es]");
+  const languageGroup = document.querySelector<HTMLElement>(".lang-toggle");
+  const languageButtons =
+    document.querySelectorAll<HTMLButtonElement>("[data-lang]");
+
+  function applyLanguage(lang: Lang): void {
+    for (const element of translatedLeaves) {
+      const text = element.getAttribute(`data-i18n-${lang}`);
+      if (text !== null) element.textContent = text;
+    }
+    const label = languageGroup?.getAttribute(`data-label-${lang}`);
+    if (label != null) languageGroup?.setAttribute("aria-label", label);
+    for (const button of languageButtons) {
+      button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+    }
+    document.documentElement.lang = lang;
+  }
+
+  let initialLanguage: Lang = "es";
+  try {
+    const saved = localStorage.getItem(languageKey);
+    if (saved === "en" || saved === "es") initialLanguage = saved;
+  } catch {
+    // Storage may be unavailable; the page still works without persistence.
+  }
+  applyLanguage(initialLanguage);
+
+  for (const button of languageButtons) {
+    button.addEventListener("click", () => {
+      const lang = button.dataset.lang;
+      if (lang !== "en" && lang !== "es") return;
+      applyLanguage(lang);
+      try {
+        localStorage.setItem(languageKey, lang);
+      } catch {
+        // Keep the selected language even when persistence is unavailable.
+      }
+    });
+  }
+
+  const countdown = document.querySelector<HTMLElement>(".countdown");
+  const targetMs = Date.parse(countdown?.dataset.eventDate ?? "");
+  const days = countdown?.querySelector<HTMLElement>(
+    '[data-countdown-unit="days"]',
+  );
+  const hours = countdown?.querySelector<HTMLElement>(
+    '[data-countdown-unit="hours"]',
+  );
+  const minutes = countdown?.querySelector<HTMLElement>(
+    '[data-countdown-unit="minutes"]',
+  );
+  const seconds = countdown?.querySelector<HTMLElement>(
+    '[data-countdown-unit="seconds"]',
+  );
+
+  if (Number.isFinite(targetMs) && days && hours && minutes && seconds) {
+    const numbers = [days, hours, minutes, seconds];
+    function updateCountdown(): void {
+      const totalSeconds = Math.floor(
+        Math.max(0, targetMs - Date.now()) / 1000,
+      );
+      const values = [
+        Math.floor(totalSeconds / 86400),
+        Math.floor((totalSeconds % 86400) / 3600),
+        Math.floor((totalSeconds % 3600) / 60),
+        totalSeconds % 60,
+      ];
+      for (let i = 0; i < numbers.length; i++) {
+        numbers[i].textContent = String(values[i]).padStart(2, "0");
+      }
+    }
+    updateCountdown();
+    window.setInterval(updateCountdown, 1000);
+  }
+</script>

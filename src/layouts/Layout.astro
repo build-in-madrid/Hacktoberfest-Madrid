@@ -1,0 +1,36 @@
+---
+import "@fontsource/big-shoulders/latin-800.css";
+import "@fontsource/jetbrains-mono/latin-400.css";
+import "@fontsource/jetbrains-mono/latin-700.css";
+import "@fontsource/dm-sans/latin-400.css";
+import "@fontsource/dm-sans/latin-500.css";
+import "@fontsource/dm-sans/latin-700.css";
+import "../styles/global.css";
+
+const title = "Hacktoberfest Hack Day Madrid 2026";
+const description =
+  "Un Hack Day presencial y gratuito dedicado al open source y a la inteligencia artificial abierta, en Madrid.";
+const image = new URL(
+  "/banner.jpg",
+  import.meta.env.VERCEL_URL
+    ? `https://${import.meta.env.VERCEL_URL}`
+    : "http://localhost:3000",
+).href;
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
