@@ -12,7 +12,7 @@ No hace falta venir con equipo ni con una idea cerrada. La idea es conocer gente
 
 - **Equipos:** presentación de asistentes, intereses y formación de grupos.
 - **Herramientas:** exploración de modelos abiertos, frameworks de agentes y herramientas elegidas por cada equipo.
-- **Construcción:** desarrollo de proyectos, contribuciones a repositorios abiertos y experimentación.
+- **Construcción:** desarrollo de proyectos y experimentación.
 - **Demos:** presentación final de lo construido durante la tarde.
 
 ## Para quién es
