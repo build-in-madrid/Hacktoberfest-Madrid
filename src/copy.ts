@@ -66,7 +66,7 @@ export const copy: Record<Lang, Copy> = {
       },
       {
         name: "Construcción",
-        desc: "El bloque principal de la tarde: desarrollo, experimentación y posibles contribuciones a repositorios abiertos.",
+        desc: "El bloque principal de la tarde: desarrollo y experimentación.",
       },
       {
         name: "Demos",
@@ -133,7 +133,7 @@ export const copy: Record<Lang, Copy> = {
       },
       {
         name: "Build",
-        desc: "The main block of the afternoon: development, experimentation, and possible contributions to open repositories.",
+        desc: "The main block of the afternoon: development and experimentation.",
       },
       {
         name: "Demos",
