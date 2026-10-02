@@ -29,6 +29,7 @@ type Copy = {
   readings1: string;
   readings2: string;
   readingSummaries: [string, string, string, string];
+  sponsors: string;
   sponsor: string;
   sponsorBody: string;
   writeUs: string;
@@ -97,6 +98,7 @@ export const copy: Record<Lang, Copy> = {
       "Setup local para modelos de menos de 10B",
       "Montar y orquestar flujos con harnesses open source",
     ],
+    sponsors: "Sponsors",
     sponsor: "¿Querés ser sponsor?",
     sponsorBody:
       "Buscamos empresas y comunidades que quieran apoyar este Hack Day con espacio, catering, premios o difusión. Si te interesa sumar tu marca al evento, escribinos.",
@@ -163,6 +165,7 @@ export const copy: Record<Lang, Copy> = {
       "Local setup for models under 10B",
       "Set up and orchestrate flows with open source harnesses",
     ],
+    sponsors: "Sponsors",
     sponsor: "Want to sponsor?",
     sponsorBody:
       "We're looking for companies and communities that want to support this Hack Day with space, catering, prizes, or promotion. If you'd like to add your brand to the event, write to us.",

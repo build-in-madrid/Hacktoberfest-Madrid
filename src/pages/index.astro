@@ -37,6 +37,12 @@ const READING_LIST = [
   },
 ];
 
+const SPONSORS = [
+  { href: "https://netbird.io", src: "/netbird.png", alt: "NetBird", width: 2077, height: 658 },
+  { href: "https://n8n.io", src: "/n8n.png", alt: "n8n", width: 458, height: 124 },
+  { href: "https://www.jetbrains.com", src: "/jetbrains.png", alt: "JetBrains", width: 301, height: 70, invert: true },
+];
+
 const t = copy.es;
 ---
 
@@ -456,6 +462,32 @@ const t = copy.es;
         </div>
       </div>
     </div>
+
+    <section class="section section-md section-hairline-top">
+      <div class="container">
+        <h3
+          class="section-heading"
+          style="margin-bottom: 28px"
+          data-i18n-es={copy.es.sponsors}
+          data-i18n-en={copy.en.sponsors}
+        >
+          {t.sponsors}
+        </h3>
+        <div class="logo-row">
+          {SPONSORS.map((p) => (
+            <a href={p.href} target="_blank" rel="noopener">
+              <img
+                src={p.src}
+                alt={p.alt}
+                width={p.width}
+                height={p.height}
+                class={p.invert ? "invert" : undefined}
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
 
     <footer class="section-hairline-top">
       <div
