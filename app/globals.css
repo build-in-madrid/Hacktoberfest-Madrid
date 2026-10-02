@@ -388,6 +388,44 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 2px 2px 0 var(--color-paper);
 }
 
+.logo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+.logo-row a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.logo-row img {
+  width: 100%;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+}
+.logo-row img.invert {
+  filter: invert(1);
+}
+.logo-row a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+  .logo-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .logo-row img {
+    max-height: 56px;
+    width: auto;
+    max-width: min(100%, 280px);
+  }
+}
+
 .footer-row {
   display: flex;
   align-items: baseline;
