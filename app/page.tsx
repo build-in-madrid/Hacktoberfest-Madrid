@@ -40,12 +40,6 @@ const READING_LIST = [
   },
 ];
 
-const SPONSORS = [
-  { href: "https://netbird.io", src: "/netbird.png", alt: "NetBird", width: 2077, height: 658 },
-  { href: "https://n8n.io", src: "/n8n.png", alt: "n8n", width: 458, height: 124 },
-  { href: "https://www.jetbrains.com", src: "/jetbrains.png", alt: "JetBrains", width: 301, height: 70, invert: true },
-];
-
 function useCountdown(target: string) {
   const [remaining, setRemaining] = useState<number | null>(null);
 
@@ -311,26 +305,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-
-      <Section spacing="md" containerSize="lg" className="section-hairline-top">
-        <Heading level={3} style={{ marginBottom: 28 }}>
-          {t.sponsors}
-        </Heading>
-        <div className="logo-row">
-          {SPONSORS.map((p) => (
-            <a key={p.href} href={p.href} target="_blank" rel="noopener">
-              <Image
-                src={p.src}
-                alt={p.alt}
-                width={p.width}
-                height={p.height}
-                className={p.invert ? "invert" : undefined}
-                unoptimized
-              />
-            </a>
-          ))}
-        </div>
-      </Section>
 
       <footer className="section-hairline-top">
         <div className="footer-row" style={{ maxWidth: 1152, margin: "0 auto", padding: "20px 28px 48px" }}>
