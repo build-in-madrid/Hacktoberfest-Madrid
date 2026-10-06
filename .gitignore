@@ -5,3 +5,6 @@ dist/
 *.tsbuildinfo
 .DS_Store
 .pnpm-store
+.next/
+out/
+next-env.d.ts
